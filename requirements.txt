@@ -40,8 +40,8 @@ toml==0.10.0
 typed-ast==1.4.1
 unicodecsv==0.14.1
 urllib3==1.25.9
+whitenoise==5.0.1
 wrapt==1.12.1
 xlrd==1.2.0
 zipp==3.1.0
-whitenoise==5.0.1
 psycopg2-binary==2.8.5
