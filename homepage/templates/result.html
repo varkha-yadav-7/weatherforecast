@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Weather Forecast</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{%static 'homepage/basics.css'%}">
+    </head>
+    <body>
+        <p><br><br></p>
+        <h1>Know the weather in your city !</h1>
+        <p><br></p>
+        <form action="getweather/" method="POST">{% csrf_token %}
+        {% for i in data.results %}
+        <div class="blurry">
+        <h3>City: {{ i.components.city }}<br>State: {{ i.components.state }}<br>District: {{ i.components.state_district }} {{i.components.state_district}}</h3>
+        <button type="submit" value="{{i.geometry}}" name="coordinates">Get weather</button>
+        </div>
+        {% endfor %}
+        </form>
+    </body>
+</html>

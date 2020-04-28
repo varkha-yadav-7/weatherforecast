@@ -1,0 +1,27 @@
+body{
+    background-image: url('https://i.pinimg.com/originals/fc/12/af/fc12af4fdda0c0ec5cf23ae293d11a7d.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+input{
+    font-size: larger;
+}
+button{
+    font-size: larger;
+}
+.blur{
+        margin: auto;
+        padding: auto;
+        color: bisque;
+        background-color: rgb(0,0,0,0.4);}
+.blurry {
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 5px;
+    margin-left: 200px;
+    margin-right: 200px;
+    color: bisque;
+    background-color: rgb(0,0,0,0.4);
+}

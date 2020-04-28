@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Weather Forecast</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{%static 'homepage/basics.css'%}">
+    </head>
+    <body>
+        <p><br><br></p>
+        <h1>Know the weather in your city !</h1>
+        <p><br></p>
+        <form action="search/" method="POST">{% csrf_token %}
+            <input type="text" placeholder="Enter city" name="city" required>
+            <input type="text" placeholder="Enter country" name="country" required>  
+            <button type="submit">Search</button>
+        </form>
+    </body>
+</html>

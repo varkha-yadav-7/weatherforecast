@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Weather Forecast</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{%static 'homepage/basics.css'%}">
+    </head>
+    <body style="text-align: center; background-color:#fff3e6;">
+        <p><br><br></p>
+        <h1>Weather in the place</h1>
+        <div class="blurry">
+        <h3>{{data.skyDescription}}<br>Temperature(in celsius) : {{data.temperature}}<br>Description : {{data.temperatureDesc}}<br>Humidity : {{data.humidity}}<br>Visibility : {{data.visibilty}}</h3>
+        </div>
+        <p><br></p>
+    </body>
+</html>
