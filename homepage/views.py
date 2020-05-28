@@ -19,11 +19,12 @@ def search(request):
         '''elif data['status_code']==200:
         return render(request,'result.html',{'data':data,'city':city})'''
     else:
-        error='No such city found'
         return render(request,'result.html',{'data':data,'city':city})
         #return HttpResponseRedirect('/homepage/')
 
 def getweather(request):
+    global error
+    error=''
     coordinates=request.POST.get('coordinates')
     data=myapi.getweather(coordinates)
     city=data['city']
