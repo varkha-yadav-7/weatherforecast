@@ -1,8 +1,18 @@
+html,body{
+    min-height: 100%;
+}
 body{
     background-image: url('https://i.pinimg.com/originals/fc/12/af/fc12af4fdda0c0ec5cf23ae293d11a7d.png');
     background-repeat: no-repeat;
+    background-position: 0 0;
     background-size: cover;
+}
+.inbox{
+    background-color: rgba(0,0,0, 0.4);
     text-align: center;
+    border:solid bisque 5px;
+    border-radius: 25px;
+    padding-bottom: 10%;
 }
 
 input{
@@ -17,11 +27,15 @@ button{
         color: bisque;
         background-color: rgb(0,0,0,0.4);}
 .blurry {
-    margin-top: auto;
-    margin-bottom: auto;
-    padding: 5px;
-    margin-left: 200px;
-    margin-right: 200px;
+    border: solid bisque 3px;
+    border-radius: 25px;
+    width: 20em;
+    height: 20em;
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+    margin-right:10px;
+    margin-bottom:10px;
     color: bisque;
     background-color: rgb(0,0,0,0.4);
 }

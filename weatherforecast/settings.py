@@ -24,7 +24,7 @@ SECRET_KEY = '8f81fe3*epr8g$^st1i#a1%$2&(1ekm-mjr4_esfjkq)w-ar_f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['weatherforecast1503.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['weatherforecast1503.herokuapp.com','127.0.0.1','192.168.43.113']
 
 
 # Application definition

@@ -2,18 +2,27 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Weather Forecast</title>
         {% load static %}
         <link rel="stylesheet" type="text/css" href="{%static 'homepage/basics.css'%}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
     <body>
+        <div class="bg-img"></div>
         <p><br><br></p>
-        <h1>Know the weather in your city !</h1>
+        <div class="container inbox">
+        <h1 style="padding-top: 5%;color: cornsilk;">Know the weather in your city !</h1>
         <p><br></p>
-        <form action="search/" method="POST">{% csrf_token %}
-            <input type="text" placeholder="Enter city" name="city" required>
-            <input type="text" placeholder="Enter country" name="country" required>  
+        <form class="card mx-auto" style="border:solid bisque 2px;float:none;width: 18rem;background-color: black;" action="search/" method="POST">{% csrf_token %}
+            <div class="card-body">
+            <h3 class="card-title" style="color: cornsilk;">Enter your location</h3><br>
+            <input type="text" placeholder="Enter city" name="city" required><br><br>
+            <input type="text" placeholder="Enter country" name="country" required><br><br>
             <button type="submit">Search</button>
+            </div>
         </form>
+        <br><h3 style="color: cornsilk;">{{error}}</h3>
+        </div>
     </body>
 </html>

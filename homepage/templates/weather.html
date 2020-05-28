@@ -5,13 +5,58 @@
         <title>Weather Forecast</title>
         {% load static %}
         <link rel="stylesheet" type="text/css" href="{%static 'homepage/basics.css'%}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
     <body style="text-align: center; background-color:#fff3e6;">
         <p><br><br></p>
-        <h1>Weather in the place</h1>
-        <div class="blurry">
-        <h3>{{data.skyDescription}}<br>Temperature(in celsius) : {{data.temperature}}<br>Description : {{data.temperatureDesc}}<br>Humidity : {{data.humidity}}<br>Visibility : {{data.visibilty}}</h3>
+        <div class="container" style="background-color: rgb(0,0 ,0,0.4);border: solid black 3px;">
+            <h1 style="text-align: center;color: cornsilk;padding:0.5em;">Weather Report</h1>
+        </div><br>
+        <div class="container">
+            <div class="card mx-auto" style="border:solid bisque 2px;float:none;width: 20rem;height:20em;background-color: black;color: cornsilk;">
+                <div class="card-body">
+                    <h2>{{data.temperature}} °C</h2>
+                    <h4>{{data.skyDescription}}</h4>
+                    {% if data.temperatureDesc %}
+                    <h4>{{data.temperatureDesc}}</h4>
+                    {% endif %}
+                    <br><br><p>{{data.city}},<br>{{data.state}},<br>{{data.country}},</p>
+                </div>
+            </div>
         </div>
         <p><br></p>
+        <div class="container-fluid">
+            <div class="row" style="margin-bottom: 3em;">
+                <div class="col-2 card" style="color: cornsilk;background-color: black;margin-right: 3em;border:solid bisque 2px;">
+                    <br><br>
+                    {{data.utcTime|slice:"0:10"}}<br>
+                    Today
+                </div>
+            {% for i in seven.forecasts.forecastLocation.forecast %}
+                {% if i.daySegment == "Morning" %}
+                <div class="col card" style="border:solid black 2px;float:none;width: 18rem;background-image: url('https://image.freepik.com/free-photo/panorama-morning-sky-cloud_58717-76.jpg');padding:0.5em;color: black;" >
+                {% elif i.daySegment == "Afternoon" %}
+                <div class="col card" style="border:solid black 2px;float:none;width: 18rem;background-image: url('https://m.media-amazon.com/images/I/41qYbXaVSlL.jpg');padding:0.5em;color: black;" >
+                {% elif i.daySegment == "Evening" %}
+                <div class="col card" style="border:solid black 2px;float:none;width: 18rem;background-image: url('https://cdn.pixabay.com/photo/2016/09/06/21/35/sunset-1650286_960_720.jpg');padding:0.5em;color: cornsilk;" >
+                {% else %}
+                <div class="col card" style="border:solid black 2px;float:none;width: 18rem;background-image: url('data:image/jpeg;base64,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');padding:0.5em;color: cornsilk;" >
+                {% endif %}
+                    <p>{{i.daySegment}}</p>
+                    <h2>{{i.temperature}} °C</h2>
+                    <h4>{{i.skyDescription}}</h4>
+                    <h4>{{i.temperatureDesc}}</h4>
+                </div>
+                {% if forloop.counter|divisibleby:"4" and not forloop.last %}
+                    </div><div class="row" style="margin-bottom: 3em;">
+                        <div class="col-2 card" style="color: cornsilk;background-color: black;margin-right: 3em;border:solid bisque 2px;">
+                            <br><br>
+                            {{i.utcTime|slice:"0:10"}}<br>
+                            {{i.weekday}}
+                        </div>
+                {% endif %}
+            {% endfor %}
+            </div>
+        </div>
     </body>
 </html>

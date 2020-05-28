@@ -13,10 +13,12 @@ def getcoordinates(city,country):
     for resource in package.resources:
       if resource.descriptor['datahub']['type'] == 'derived/csv':
           m=resource.read()
+    country_code=''
     for i in m:
         if i[0]==country:
-            print(i[1])
             country_code=i[1]
+    if country_code=='':
+        return "Please enter a valid country name"
     payload={'key':API_KEY1,'q':city,'countrycode':country_code}
     r=requests.get(url1,payload)
     data=r.json()
@@ -27,6 +29,12 @@ def getweather(coordinates):
     lat=coordinate['lat']
     lon=coordinate['lng']
     payload={'apiKey':API_KEY2,'latitude':lat,'longitude':lon,'oneobservation':True,'product':'observation'}
-    r=requests.get(url2,params=payload)
+    r=requests.get(url2,params=payload,timeout=5)
     data=r.json()
     return data['observations']['location'][0]['observation'][0]
+
+def seven(city):
+    payload={'apiKey':API_KEY2,'name':city,'product':'forecast_7days'}
+    r=requests.get(url2,payload)
+    data=r.json()
+    return data
