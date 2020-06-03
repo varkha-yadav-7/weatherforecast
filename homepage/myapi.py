@@ -15,7 +15,7 @@ def getcoordinates(city,country):
           m=resource.read()
     country_code=''
     for i in m:
-        if i[0]==country:
+        if i[0].lower()==country.lower():
             country_code=i[1]
     if country_code=='':
         return "Please enter a valid country name"
