@@ -3,8 +3,8 @@ import json
 from ast import literal_eval
 from datapackage import Package
 
-API_KEY1='afd5274eacb94dff879071204a18bafc'
-API_KEY2='fy4tR9Jj6dGWtzpEmpO1kcKouKLPSjmb0K9BA-kUYf8'
+API_KEY1=''
+API_KEY2=''
 url1='https://api.opencagedata.com/geocode/v1/json?'
 url2='https://weather.ls.hereapi.com/weather/1.0/report.json?'
 
