@@ -25,9 +25,20 @@ It mainly focuses on the use of API. You can view project through this deployed 
 #### Initialize the variables with the API keys provided in homepage/myapi.py
 
 
-## Steps to run
 
-After cloning, get inside weatherforecast repository.
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/varkha-yadav-7/weatherforecast.git
+```
+
+Go to the project directory
+
+```bash
+  cd weatherforecast
+```
 
 Activate the virtual environment through your terminal
 
@@ -35,7 +46,7 @@ Activate the virtual environment through your terminal
   source myvenv/bin/activate
 ```
 
-Run the application :
+Run the application
 
 ```bash
   python manage.py runserver
